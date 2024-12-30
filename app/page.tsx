@@ -92,74 +92,104 @@ function App() {
   };
 
   return (
-    <main>
-      <div className="head">
-        <h1>Crypto Trading App</h1>
+    <main className="flex flex-col items-center bg-black text-white min-h-screen overflow-hidden">
+      <div className="head w-full bg-gray-800 p-4 flex justify-between items-center">
+        <h1 className="text-xl text-aqua">Crypto Trading App</h1>
         {selectedSymbol && (
-          <h2>Current symbol you are viewing: {selectedSymbol}</h2>
+          <h2 className="text-md text-white">Current symbol: {selectedSymbol}</h2>
         )}
       </div>
-      <div className="container">
-        <div className="coindata">
+      <div className="container flex w-full">
+        <div className="coindata flex flex-col items-center p-4 bg-gray-900 w-1/4 h-screen overflow-y-scroll">
           <input
             type="text"
+            className="mb-4 p-2 text-lg rounded"
             placeholder="Search cryptocurrency..."
             value={searchQuery}
             onChange={handleSearch}
           />
-          <div className="data">
-            <ul>
-              {filteredData.map((item, index) => (
-                <li key={index} onClick={() => handleSymbolClick(item.market)}>
-                  <h4>{item.market}</h4>
-                  <h5>
-                    $
-                    {item.last_price !== undefined
-                      ? parseFloat(item.last_price.toString()).toFixed(3)
-                      : "N/A"}
-                  </h5>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="w-full">
+            {filteredData.map((item, index) => (
+              <li
+                key={index}
+                className="flex justify-between items-center p-4 mb-2 bg-gray-700 rounded cursor-pointer hover:bg-gray-600"
+                onClick={() => handleSymbolClick(item.market)}
+              >
+                <h4 className="text-aqua">{item.market}</h4>
+                <h5>
+                  $
+                  {item.last_price && !isNaN(Number(item.last_price))
+                    ? Number(item.last_price).toFixed(3)
+                    : "N/A"}
+                </h5>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="tradingview-widget-container" ref={container}>
-          <div className="tradingview-widget-container__widget"></div>
+        <div className="tradingview-widget-container w-3/4 p-4 flex flex-col items-center relative">
+          <div className="tradingview-widget-container__widget" ref={container}></div>
           {show && (
-            <div className="buy-sell-tab">
-              <label>
+            <div className="buy-sell-tab absolute top-1/4 flex justify-around items-center bg-teal-500 p-4 rounded w-full">
+              <label className="text-white">
                 Buying {selectedSymbol} amount
-                <input type="number" placeholder="Enter amount" />
+                <input
+                  type="number"
+                  placeholder="Enter amount"
+                  className="ml-2 p-2 rounded"
+                />
               </label>
-              <label>
+              <label className="text-white">
                 Sell {selectedSymbol} amount
-                <input type="number" placeholder="Enter price" />
+                <input
+                  type="number"
+                  placeholder="Enter price"
+                  className="ml-2 p-2 rounded"
+                />
               </label>
-              <button className="confirm">Confirm</button>
+              <button className="confirm p-2 bg-blue-500 text-white rounded">
+                Confirm
+              </button>
             </div>
           )}
-          <div className="container-buy-sell-value">
-            <div className="buy-value"></div>
-            <div className="sell-value"></div>
+          <div className="container-buy-sell-value w-full absolute bottom-0 p-4 bg-aqua flex justify-between">
+            <div className="buy-value">Buy Value</div>
+            <div className="sell-value">Sell Value</div>
           </div>
         </div>
-        <div className="bidsandask">
-          <div className="header">
-            <h1>Bids & Ask</h1>
+        <div className="bidsandask w-1/4 h-screen p-4 overflow-y-scroll">
+          <div className="header mb-4">
+            <h1 className="text-aqua">Bids & Ask</h1>
           </div>
-          <div className="buy-sell-btn">
-            <button className="buy-btn" onClick={() => setShow(true)}>
+          <div className="buy-sell-btn flex justify-center mb-4">
+            <button
+              className="buy-btn bg-green-500 text-white px-4 py-2 rounded mr-4"
+              onClick={() => setShow(true)}
+            >
               Buy
             </button>
-            <button className="sell-btn" onClick={() => setShow(false)}>
+            <button
+              className="sell-btn bg-red-500 text-white px-4 py-2 rounded"
+              onClick={() => setShow(false)}
+            >
               Sell
             </button>
           </div>
           <div className="biddata">
             {filteredData.map((item, index) => (
-              <li key={index}>
-                <h3>{parseFloat(item.bid.toString()).toFixed(2)}</h3>
-                <h2>${parseFloat(item.ask.toString()).toFixed(3)}</h2>
+              <li
+                key={index}
+                className="flex justify-between items-center p-4 mb-2 bg-gray-700 rounded"
+              >
+                <h3>
+                  {item.bid && !isNaN(Number(item.bid))
+                    ? Number(item.bid).toFixed(2)
+                    : "N/A"}
+                </h3>
+                <h2>
+                  ${item.ask && !isNaN(Number(item.ask))
+                    ? Number(item.ask).toFixed(3)
+                    : "N/A"}
+                </h2>
               </li>
             ))}
           </div>

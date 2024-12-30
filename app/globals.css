@@ -74,7 +74,7 @@ li {
   /* margin-top: 10px; */
   height: 20vh;
   width: 65vw;
-  background-color: rgb(7, 170, 170);
+  /* background-color: rgb(7, 170, 170); */
 }
 .buy-sell-btn button {
   width:10vw;
@@ -119,7 +119,7 @@ li {
 .buy-and-sell {
   height: 17vh;
   width: 65vw;
-  background: darkblue;
+  /* background: darkblue; */
 }
 .bidsandask {
   height: 100vh;
