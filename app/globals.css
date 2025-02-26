@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,38 +6,37 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #111827; /* gray-900 */
-  color: #ffffff; /* white */
+  background-color: #111827;
+  color: #ffffff;
   min-height: 100vh;
 }
 
-/* Header */
 .header {
   width: 100%;
-  background-color: #1f2937; /* gray-800 */
+  background-color: #1f2937;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #374151; /* gray-700 */
+  border-bottom: 1px solid #374151;
 }
 
 .header-title {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #2dd4bf; /* teal-400 */
+  color: #2dd4bf;
 }
 
 .header-symbol {
   display: flex;
   align-items: center;
-  background-color: #374151; /* gray-700 */
+  background-color: #374151;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
 .header-symbol-name {
-  color: #2dd4bf; /* teal-400 */
+  color: #2dd4bf;
   font-weight: 500;
   margin-right: 0.5rem;
 }
@@ -47,7 +45,6 @@ body {
   color: #ffffff;
 }
 
-/* Main Layout */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -71,7 +68,7 @@ body {
 
 .coindata-search {
   padding: 1rem;
-  border-bottom: 1px solid #374151; /* gray-700 */
+  border-bottom: 1px solid #374151;
   position: relative;
 }
 
@@ -82,7 +79,7 @@ body {
 .search-input {
   width: 100%;
   padding: 0.75rem 0.75rem 0.75rem 2.5rem;
-  background-color: #374151; /* gray-700 */
+  background-color: #374151;
   color: #ffffff;
   border: 1px solid #374151;
   border-radius: 0.5rem;
@@ -91,8 +88,8 @@ body {
 
 .search-input:focus {
   outline: none;
-  border-color: #2dd4bf; /* teal-400 */
-  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.5); /* teal-400 ring */
+  border-color: #2dd4bf;
+  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.5);
 }
 
 .search-icon {
@@ -102,7 +99,7 @@ body {
   transform: translateY(-50%);
   width: 1.25rem;
   height: 1.25rem;
-  color: #9ca3af; /* gray-400 */
+  color: #9ca3af;
 }
 
 .coindata-list {
@@ -120,12 +117,12 @@ body {
 }
 
 .coindata-item:hover {
-  background-color: #374151; /* gray-700 on hover */
+  background-color: #374151;
 }
 
 .coindata-item.active {
-  background-color: #374151; /* gray-700 */
-  border-left: 4px solid #2dd4bf; /* teal-400 */
+  background-color: #374151;
+  border-left: 4px solid #2dd4bf;
 }
 
 .coindata-item-name {
@@ -135,7 +132,7 @@ body {
 
 .coindata-item-bid {
   font-size: 0.875rem;
-  color: #9ca3af; /* gray-400 */
+  color: #9ca3af;
 }
 
 .coindata-item-price {
@@ -145,18 +142,17 @@ body {
 
 .coindata-item-ask {
   font-size: 0.75rem;
-  color: #10b981; /* green-400 for positive change */
+  color: #10b981;
 }
 
 .coindata-item-ask.negative {
-  color: #f87171; /* red-400 for negative change */
+  color: #f87171;
 }
 
-/* Chart Container (Center) */
 .chart-container {
   width: 150%;
   padding: 1rem;
-  background-color: #111827; /* gray-900 */
+  background-color: #111827;
   position: relative;
 }
 
@@ -174,8 +170,8 @@ body {
   left: 50%;
   transform: translateX(-50%);
   max-width: 28rem;
-  background-color: #1f2937; /* gray-800 */
-  border: 1px solid #374151; /* gray-700 */
+  background-color: #1f2937;
+  border: 1px solid #374151;
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
@@ -194,331 +190,9 @@ body {
   }
 }
 
-.trading-panel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.trading-panel-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.trading-panel-close {
-  color: #9ca3af; /* gray-400 */
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-
-.trading-panel-close:hover {
-  color: #ffffff;
-}
-
-.trading-panel-input {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #374151; /* gray-700 */
-  border: 1px solid #4b5563; /* gray-600 */
-  border-radius: 0.375rem;
-  color: #ffffff;
-  margin-top: 0.25rem;
-}
-
-.trading-panel-input:focus {
-  outline: none;
-  border-color: #2dd4bf; /* teal-400 */
-  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.5);
-}
-
-.trading-panel-label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #9ca3af; /* gray-400 */
-  margin-bottom: 0.25rem;
-}
-
-.trading-panel-total {
-  padding-top: 0.5rem;
-  font-size: 0.875rem;
-  color: #9ca3af;
-}
-
-.trading-panel-total-value {
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.trading-panel-button {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  color: #ffffff;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-.trading-panel-button.buy {
-  background-color: #10b981; /* green-500 */
-}
-
-.trading-panel-button.buy:hover {
-  background-color: #059669; /* green-600 */
-  transform: scale(1.02);
-}
-
-.trading-panel-button.sell {
-  background-color: #ef4444; /* red-500 */
-}
-
-.trading-panel-button.sell:hover {
-  background-color: #dc2626; /* red-600 */
-  transform: scale(1.02);
-}
-
-.trading-panel-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Order Book (Right Sidebar) */
-.order-book {
-  width: 40%;
-  background-color: #1f2937; /* gray-800 */
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.order-book-header {
-  padding: 1rem;
-  border-bottom: 1px solid #374151; /* gray-700 */
-}
-
-.order-book-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.order-book-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.order-book-button {
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  color: #ffffff;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-.order-book-button.buy {
-  background-color: #10b981; /* green-500 */
-}
-
-.order-book-button.buy:hover {
-  background-color: #059669; /* green-600 */
-  transform: scale(1.02);
-}
-
-.order-book-button.sell {
-  background-color: #ef4444; /* red-500 */
-}
-
-.order-book-button.sell:hover {
-  background-color: #dc2626; /* red-600 */
-  transform: scale(1.02);
-}
-
-.order-book-summary {
-  background-color: #374151; /* gray-700 */
-  padding: 1rem;
-  border-radius: 0.375rem;
-  margin-bottom: 1rem;
-}
-
-.order-book-summary-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-
-.order-book-summary-label {
-  color: #9ca3af; /* gray-400 */
-}
-
-.order-book-summary-value {
-  font-weight: 500;
-}
-
-.order-book-summary-value.positive {
-  color: #10b981; /* green-400 */
-}
-
-.order-book-summary-value.negative {
-  color: #f87171; /* red-400 */
-}
-
-.order-book-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
-}
-
-.order-book-subtitle {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.order-book-table-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: #9ca3af; /* gray-400 */
-  margin-bottom: 0.5rem;
-}
-
-.order-book-table-header > span:nth-child(2) {
-  text-align: center;
-}
-
-.order-book-table-header > span:nth-child(3) {
-  text-align: right;
-}
-
-.order-book-table {
-  border-top: 1px solid #374151; /* gray-700 */
-  border-bottom: 1px solid #374151;
-  padding: 0.5rem 0;
-  margin-bottom: 0.5rem;
-}
-
-.order-book-table-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  margin-bottom: 0.25rem;
-}
-
-.order-book-table-row.ask span:first-child {
-  color: #f87171; /* red-400 */
-}
-
-.order-book-table-row.bid span:first-child {
-  color: #10b981; /* green-400 */
-}
-
-.order-book-table-row span:nth-child(2) {
-  text-align: center;
-}
-
-.order-book-table-row span:nth-child(3) {
-  text-align: right;
-}
-
-.order-book-table-current {
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.order-book-table-current span:nth-child(2),
-.order-book-table-current span:nth-child(3) {
-  color: #9ca3af; /* gray-400 */
-}
-
-/* Wallet */
-.wallet-balance {
-  background-color: #374151; /* gray-700 */
-  padding: 1rem;
-  border-radius: 0.375rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.wallet-balance-title {
-  font-size: 1rem;
-  color: #9ca3af; /* gray-400 */
-  margin-bottom: 0.5rem;
-}
-
-.wallet-balance-value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2dd4bf; /* teal-400 */
-}
-
-/* Transaction History */
-.transaction-history {
-  background-color: #374151; /* gray-700 */
-  padding: 1rem;
-  border-radius: 0.375rem;
-}
-
-.transaction-history-toggle {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #2dd4bf; /* teal-600 */
-  color: #ffffff;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.15s ease;
-}
-
-.transaction-history-toggle:hover {
-  background-color: #14b8a6; /* teal-700 */
-}
-
-.transaction-history-list {
-  margin-top: 1rem;
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.transaction-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem;
-  border-bottom: 1px solid #4b5563; /* gray-600 */
-}
-
-.transaction-item-type.buy {
-  color: #10b981; /* green-400 */
-}
-
-.transaction-item-type.sell {
-  color: #f87171; /* red-400 */
-}
-
-.transaction-item-details {
-  font-size: 0.875rem;
-  color: #9ca3af; /* gray-400 */
-}
-
-.transaction-item-amount {
-  font-weight: 500;
-  color: #ffffff;
-}
-
-/* Loading Spinner */
 .loading-spinner {
   border: 2px solid transparent;
-  border-top: 2px solid #2dd4bf; /* teal-400 */
+  border-top: 2px solid #2dd4bf;
   border-bottom: 2px solid #2dd4bf;
   border-radius: 50%;
   width: 2rem;
@@ -531,27 +205,22 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .content-container {
     flex-direction: column;
   }
-
   .coindata,
   .chart-container,
   .order-book {
     width: 80v;
     height: auto;
   }
-
   .chart-wrapper {
     height: 400px;
   }
-
   .trading-panel {
     max-width: 90%;
   }
-
   .order-book-content {
     max-height: 300px;
   }
@@ -562,38 +231,30 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .header-symbol {
     margin-top: 0.5rem;
   }
-
   .coindata-search {
     padding: 0.5rem;
   }
-
   .search-input {
     padding: 0.5rem 0.5rem 0.5rem 2rem;
     font-size: 0.875rem;
   }
-
   .search-icon {
     width: 1rem;
     height: 1rem;
   }
-
   .coindata-item {
     padding: 0.75rem;
   }
-
   .trading-panel {
     padding: 1rem;
     top: 3rem;
   }
-
   .order-book-buttons {
     grid-template-columns: 1fr;
   }
-
   .order-book-button {
     padding: 0.75rem;
   }
