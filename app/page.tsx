@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, memo, useState, useCallback, useMemo } from "react";
 import { debounce } from "lodash";
+import "../app/globals.css"; // Import the CSS file
 
 interface CryptoData {
   market: string;
@@ -56,7 +57,7 @@ function App() {
   const [tradeType, setTradeType] = useState<'buy' | 'sell'>('buy');
   const [amount, setAmount] = useState<string>("");
   const [price, setPrice] = useState<string>("");
-  const [walletBalance, setWalletBalance] = useState<number>(1000); // Starting balance in USDT
+  const [walletBalance, setWalletBalance] = useState<number>(1000);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [showTransactions, setShowTransactions] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -139,7 +140,6 @@ function App() {
       };
 
       chartContainer.current.appendChild(script);
-      console.log(`Loading TradingView with symbol: ${formattedSymbol}`);
     }
   }, []);
 
@@ -187,7 +187,6 @@ function App() {
 
   useEffect(() => {
     if (!isClient) return;
-
     const fetchData = async () => {
       setIsLoading(true);
       setError(null);
